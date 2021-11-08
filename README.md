@@ -1,3 +1,4 @@
+[![CI](https://github.com/ToryaliOmary/Webtech_Projekt/actions/workflows/tests.yml/badge.svg)](https://github.com/ToryaliOmary/Webtech_Projekt/actions/workflows/tests.yml)
 # Webtech_Projekt
 Partner:    Toryali Omary (s0577796)
             Emilio Bratta (s0579148)
