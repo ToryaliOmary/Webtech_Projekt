@@ -10,7 +10,7 @@ public class PasswortEntity {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "website")
+    @Column(name = "website", nullable = false)
     private String website;
 
     @Column(name = "passwort", nullable = false)
@@ -18,6 +18,7 @@ public class PasswortEntity {
 
 
     public PasswortEntity(String website, String passwort) {
+        this.id = id;
         this.website = website;
         this.passwort = passwort;
     }
@@ -33,13 +34,9 @@ public class PasswortEntity {
         this.id = id;
     }
 
-    public String getWebsite() {
-        return website;
-    }
+    public String getWebsite() {return website;}
 
-    public void setWebsite(String website) {
-        this.website = website;
-    }
+    public void setWebsite(String website) {this.website = website;}
 
     public String getPasswort() {
         return passwort;
