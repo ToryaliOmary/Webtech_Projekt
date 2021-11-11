@@ -1,16 +1,29 @@
-package com.example.servingwebcontent.api;
+package com.example.persistence;
 
-public class Passwort {
+import javax.persistence.*;
 
+@Entity(name = "passwoerter")
+public class PasswortEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
-    private String website;  //Namen der Website oder des Programmes, bei dem Passwort gespeichert werden soll
-    private String passwort; //mindestens 5 Charaktere + 1. Buchstabe groß
 
-    public Passwort(Long id, String website, String passwort) {
-        this.id = id;
+    @Column(name = "website")
+    private String website;
+
+    @Column(name = "passwort", nullable = false)
+    private String passwort;
+
+
+    public PasswortEntity(String website, String passwort) {
         this.website = website;
         this.passwort = passwort;
     }
+
+    protected PasswortEntity() {}
+
 
     public Long getId() {
         return id;
