@@ -13,8 +13,8 @@ public class PasswortRestController {
 
     public PasswortRestController(List<Passwort> passwort) {
         this.passwort = passwort;
-        this.passwort.add(new Passwort(1, "www.test1.de", "Passwort" ));        //1. Testwebsite
-        this.passwort.add(new Passwort("www.test2.de", "Passwort" ));        //2. Testwebsite
+        this.passwort.add(new Passwort(1L, "www.test1.de", "Passwort" ));        //1. Testwebsite
+        this.passwort.add(new Passwort(2L,"www.test2.de", "Passwort" ));        //2. Testwebsite
     }
 
     @GetMapping(path = "/api/passwort")
