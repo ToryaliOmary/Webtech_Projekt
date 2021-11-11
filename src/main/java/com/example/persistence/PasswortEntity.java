@@ -18,7 +18,6 @@ public class PasswortEntity {
 
 
     public PasswortEntity(String website, String passwort) {
-        this.id = id;
         this.website = website;
         this.passwort = passwort;
     }
