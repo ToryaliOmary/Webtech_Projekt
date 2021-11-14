@@ -1,4 +1,4 @@
-package com.example.servingwebcontent.api;
+package com.example.servingwebcontent;
 
 import com.example.service.PasswortService;
 import com.example.servingwebcontent.api.Passwort;
