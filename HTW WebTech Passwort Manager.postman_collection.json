@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "bf4a326d-1c47-4a87-82e3-48b1f9600b72",
+		"name": "HTW WebTech Passwort Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all passwörter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hosturl}}/api/passwort",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"passwort"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Passwort",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"website\": \"www.test.com\",\r\n    \"passwort\": \"htw1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hosturl}}/api/passwort",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"passwort"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Passwort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hosturl}}/api/v1/passwort/3",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"passwort",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Passwort",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"website\": \"www.test.com\",\r\n    \"passwort\": \"htw4321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{hosturl}}/api/v1/passwort/2",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"passwort",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Passwort",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{hosturl}}/api/v1/passwort/2",
+					"host": [
+						"{{hosturl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"passwort",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
