@@ -10,6 +10,8 @@ public class PasswortManipulationRequest {
         this.passwort = passwort;
     }
 
+    public PasswortManipulationRequest(){};
+
     public String getWebsite() {
         return website;
     }
