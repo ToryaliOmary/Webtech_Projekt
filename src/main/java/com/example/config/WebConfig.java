@@ -14,7 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedMethods("*")
                 .allowedOriginPatterns(
-                        "https:://localhost:3000",
+                        "http://localhost:3000",
                         "https://passwortmanager-frontend.herokuapp.com"
                 );
     }
