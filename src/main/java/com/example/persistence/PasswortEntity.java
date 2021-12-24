@@ -16,10 +16,14 @@ public class PasswortEntity {
     @Column(name = "passwort", nullable = false)
     private String passwort;
 
+    @Column(name = "arbeitsbereich", nullable = false)
+    private String arbeitsbereich;
 
-    public PasswortEntity(String website, String passwort) {
+
+    public PasswortEntity(String website, String passwort, String arbeitsbereich) {
         this.website = website;
         this.passwort = passwort;
+        this.arbeitsbereich = arbeitsbereich;
     }
 
     protected PasswortEntity() {}
@@ -43,5 +47,13 @@ public class PasswortEntity {
 
     public void setPasswort(String passwort) {
         this.passwort = passwort;
+    }
+
+    public String getArbeitsbereich() {
+        return arbeitsbereich;
+    }
+
+    public void setArbeitsbereich(String arbeitsbereich){
+        this.arbeitsbereich = arbeitsbereich;
     }
 }
