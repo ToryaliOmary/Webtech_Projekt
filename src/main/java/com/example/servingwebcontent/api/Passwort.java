@@ -42,4 +42,8 @@ public class Passwort {
         this.arbeitsbereich = arbeitsbereich;
     }
 
+    public String getArbeitsbereich(){
+        return arbeitsbereich;
+    }
+
 }
