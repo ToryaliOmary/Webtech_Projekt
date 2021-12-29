@@ -48,4 +48,5 @@ public class PasswortRestController {
         boolean successful = passwortService.deleteById(id);
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
+
 }

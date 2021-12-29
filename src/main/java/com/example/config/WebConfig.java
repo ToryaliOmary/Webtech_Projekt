@@ -12,8 +12,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedMethods("*")
-                .allowedOriginPatterns(
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedOrigins(
                         "http://localhost:3000",
                         "https://passwortmanager-frontend.herokuapp.com"
                 );
