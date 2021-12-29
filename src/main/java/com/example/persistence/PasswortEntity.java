@@ -16,7 +16,7 @@ public class PasswortEntity {
     @Column(name = "passwort", nullable = false)
     private String passwort;
 
-    @Column(name = "arbeitsbereich", nullable = false)
+    @Column(name = "arbeitsbereich", nullable = true)
     private String arbeitsbereich;
 
 
