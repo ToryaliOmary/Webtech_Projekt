@@ -1,5 +1,7 @@
 package com.example.servingwebcontent.api;
 
+import com.example.service.AES;
+
 public class Passwort {
 
     private Long id;
@@ -31,11 +33,11 @@ public class Passwort {
     }
 
     public String getPasswort() {
-        return passwort;
+        return AES.decrypt(passwort);
     }
 
     public void setPasswort(String passwort) {
-        this.passwort = passwort;
+        this.passwort = AES.encrypt(passwort);
     }
 
     public void setArbeitsbereich(String arbeitsbereich){

@@ -1,5 +1,7 @@
 package com.example.persistence;
 
+import com.example.service.AES;
+
 import javax.persistence.*;
 
 @Entity(name = "passwoerter")
@@ -42,11 +44,11 @@ public class PasswortEntity {
     public void setWebsite(String website) {this.website = website;}
 
     public String getPasswort() {
-        return passwort;
+        return AES.decrypt(passwort);
     }
 
     public void setPasswort(String passwort) {
-        this.passwort = passwort;
+        this.passwort = AES.encrypt(passwort);
     }
 
     public String getArbeitsbereich() {

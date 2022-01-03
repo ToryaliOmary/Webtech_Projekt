@@ -1,6 +1,7 @@
 package com.example.service;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -13,13 +14,13 @@ public class AES {
 
     private static SecretKeySpec secretKey;
     private static byte[] key;
-    static String secret = System.getenv("ENCRYPTION_KEY");
+    public static String secret = System.getenv("ENCRYPTION_KEY");
 
     public static void setKey(String myKey)
     {
         MessageDigest sha = null;
         try {
-            key = myKey.getBytes("UTF-8");
+            key = myKey.getBytes(StandardCharsets.UTF_8);
             sha = MessageDigest.getInstance("SHA-1");
             key = sha.digest(key);
             key = Arrays.copyOf(key, 16);
@@ -28,12 +29,9 @@ public class AES {
         catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-        catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
     }
 
-    public static String encrypt(String strToEncrypt, String secret)
+    public static String encrypt(String strToEncrypt)
     {
         try
         {
@@ -49,7 +47,7 @@ public class AES {
         return null;
     }
 
-    public static String decrypt(String strToDecrypt, String secret)
+    public static String decrypt(String strToDecrypt)
     {
         try
         {

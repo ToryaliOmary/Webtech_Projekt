@@ -1,5 +1,7 @@
 package com.example.servingwebcontent.api;
 
+import com.example.service.AES;
+
 public class PasswortManipulationRequest {
 
     public String arbeitsbreich;
@@ -23,11 +25,11 @@ public class PasswortManipulationRequest {
     }
 
     public String getPasswort() {
-        return passwort;
+        return AES.decrypt(passwort);
     }
 
     public void setPasswort(String passwort) {
-        this.passwort = passwort;
+        this.passwort = AES.encrypt(passwort);
     }
 
     public String getArbeitsbereich() {
