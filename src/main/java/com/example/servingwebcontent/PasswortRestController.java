@@ -32,9 +32,14 @@ public class PasswortRestController {
 
     @PostMapping(path = "/api/passwort")
     public ResponseEntity<Void> createPasswort(@RequestBody PasswortManipulationRequest request) throws URISyntaxException {
+        var valid =  validate(request);
+        if(valid){
             var passwort = passwortService.create(request);
             URI uri = new URI("/api/v1/passwort/" + passwort.getId());
             return ResponseEntity.created(uri).build();
+        }else{
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @PutMapping(path = "/api/v1/passwort/{id}")
@@ -47,6 +52,15 @@ public class PasswortRestController {
     public ResponseEntity<Void> deletePasswort(@PathVariable Long id) {
         boolean successful = passwortService.deleteById(id);
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+    }
+
+    private boolean validate(PasswortManipulationRequest request){
+        return request.getWebsite() != null
+                && !request.getWebsite().isBlank()
+                && request.getPasswort() != null
+                && !request.getPasswort().isBlank()
+                && request.getArbeitsbereich() != null
+                && !request.getArbeitsbereich().isBlank();
     }
 
 }

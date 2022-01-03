@@ -1,5 +1,7 @@
 package com.example.persistence;
 
+import com.example.service.AES;
+
 import javax.persistence.*;
 
 @Entity(name = "passwoerter")

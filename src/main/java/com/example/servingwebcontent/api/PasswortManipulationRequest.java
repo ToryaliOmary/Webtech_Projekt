@@ -1,5 +1,7 @@
 package com.example.servingwebcontent.api;
 
+import com.example.service.AES;
+
 public class PasswortManipulationRequest {
 
     public String arbeitsbreich;

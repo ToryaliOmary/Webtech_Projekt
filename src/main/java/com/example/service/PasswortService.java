@@ -31,7 +31,7 @@ public class PasswortService {
     }
 
     public Passwort create(PasswortManipulationRequest request) {
-        var passwortEntity = new PasswortEntity(request.getWebsite(), request.getPasswort(), request.getArbeitsbereich());
+        var passwortEntity = new PasswortEntity(request.getWebsite(), AES.encrypt(request.getPasswort()), request.getArbeitsbereich());
         passwortEntity = passwortRepository.save(passwortEntity);
         return transformEntity(passwortEntity);
     }
@@ -64,7 +64,7 @@ public class PasswortService {
         return new Passwort(
                 passwortEntity.getId(),
                 passwortEntity.getWebsite(),
-                passwortEntity.getPasswort(),
+                AES.decrypt(passwortEntity.getPasswort()),
                 passwortEntity.getArbeitsbereich()
         );
     }
