@@ -33,11 +33,11 @@ public class Passwort {
     }
 
     public String getPasswort() {
-        return AES.decrypt(passwort);
+        return passwort;
     }
 
     public void setPasswort(String passwort) {
-        this.passwort = AES.encrypt(passwort);
+        this.passwort = passwort;
     }
 
     public void setArbeitsbereich(String arbeitsbereich){
