@@ -7,8 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 public class WebtechProjektCryptionTest {
-
 
     @Test
     @DisplayName("should display correct string after encrypting and decrypting")
