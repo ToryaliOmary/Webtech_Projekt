@@ -4,14 +4,14 @@ import com.example.service.AES;
 
 public class PasswortManipulationRequest {
 
-    public String arbeitsbreich;
+    public String arbeitsbereich;
     private String website;  //Namen der Website oder des Programmes, bei dem Passwort gespeichert werden soll
     private String passwort; //mindestens 5 Charaktere + 1. Buchstabe groß
 
     public PasswortManipulationRequest(String website, String passwort, String arbeitsbereich) {
         this.website = website;
         this.passwort = passwort;
-        this.arbeitsbreich = arbeitsbereich;
+        this.arbeitsbereich = arbeitsbereich;
     }
 
     public PasswortManipulationRequest(){};
@@ -33,6 +33,10 @@ public class PasswortManipulationRequest {
     }
 
     public String getArbeitsbereich() {
-        return arbeitsbreich;
+        return arbeitsbereich;
+    }
+
+    public void setArbeitsbereich(String arbeitsbereich){
+        this.arbeitsbereich = arbeitsbereich;
     }
 }
