@@ -14,3 +14,5 @@ jobs:
           java-version: 16
       - name: clean build
         run: ./gradlew clean test --info --stacktrace
+        env:
+          ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
